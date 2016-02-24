@@ -1,0 +1,111 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 2/23/16 11:02 PM
+Description: Sending packet
+
+java.lang.NumberFormatException: For input string: "ICAT01"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at net.minecraft.src.GuiNewChat.printChatMessage(GuiNewChat.java:420)
+	at net.minecraft.src.NetClientHandler.handleChat(NetClientHandler.java:700)
+	at net.minecraft.src.Packet3Chat.processPacket(Packet3Chat.java:60)
+	at net.minecraft.src.MemoryConnection.processOrCachePacket(MemoryConnection.java:151)
+	at net.minecraft.src.MemoryConnection.addToSendQueue(MemoryConnection.java:44)
+	at net.minecraft.src.NetServerHandler.sendPacketToPlayer(NetServerHandler.java:578)
+	at net.minecraft.src.ServerConfigurationManager.sendPacketToAllPlayers(ServerConfigurationManager.java:548)
+	at net.minecraft.src.NetServerHandler.handleChat(NetServerHandler.java:645)
+	at net.minecraft.src.Packet3Chat.processPacket(Packet3Chat.java:60)
+	at net.minecraft.src.MemoryConnection.processOrCachePacket(MemoryConnection.java:151)
+	at net.minecraft.src.MemoryConnection.addToSendQueue(MemoryConnection.java:44)
+	at net.minecraft.src.NetClientHandler.addToSendQueue(NetClientHandler.java:668)
+	at net.minecraft.src.EntityClientPlayerMP.sendChatMessage(EntityClientPlayerMP.java:229)
+	at net.minecraft.src.GuiChat.keyTyped(GuiChat.java:107)
+	at net.minecraft.src.GuiScreen.handleKeyboardInput(GuiScreen.java:238)
+	at net.minecraft.src.GuiScreen.handleInput(GuiScreen.java:177)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1392)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:732)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:657)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at net.minecraft.src.GuiNewChat.printChatMessage(GuiNewChat.java:420)
+	at net.minecraft.src.NetClientHandler.handleChat(NetClientHandler.java:700)
+	at net.minecraft.src.Packet3Chat.processPacket(Packet3Chat.java:60)
+	at net.minecraft.src.MemoryConnection.processOrCachePacket(MemoryConnection.java:151)
+	at net.minecraft.src.MemoryConnection.addToSendQueue(MemoryConnection.java:44)
+
+-- Packet being sent --
+Details:
+	Packet ID: 3
+	Packet class: net.minecraft.src.Packet3Chat
+Stacktrace:
+	at net.minecraft.src.NetServerHandler.sendPacketToPlayer(NetServerHandler.java:578)
+	at net.minecraft.src.ServerConfigurationManager.sendPacketToAllPlayers(ServerConfigurationManager.java:548)
+	at net.minecraft.src.NetServerHandler.handleChat(NetServerHandler.java:645)
+	at net.minecraft.src.Packet3Chat.processPacket(Packet3Chat.java:60)
+	at net.minecraft.src.MemoryConnection.processOrCachePacket(MemoryConnection.java:151)
+	at net.minecraft.src.MemoryConnection.addToSendQueue(MemoryConnection.java:44)
+	at net.minecraft.src.NetClientHandler.addToSendQueue(NetClientHandler.java:668)
+	at net.minecraft.src.EntityClientPlayerMP.sendChatMessage(EntityClientPlayerMP.java:229)
+	at net.minecraft.src.GuiChat.keyTyped(GuiChat.java:107)
+	at net.minecraft.src.GuiScreen.handleKeyboardInput(GuiScreen.java:238)
+	at net.minecraft.src.GuiScreen.handleInput(GuiScreen.java:177)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.src.GuiChat
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 2 total; [EntityClientPlayerMP['ICAT09'/313, l='MpServer', x=-334.30, y=64.62, z=-20.30], EntityOtherPlayerMP['ICAT01'/410, l='MpServer', x=-336.00, y=62.00, z=-20.66]]
+	Chunk stats: MultiplayerChunkCache: 441
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-332,64,17), Chunk: (at 4,4,1 in -21,1; contains blocks -336,0,16 to -321,255,31), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 71105 game time, 71105 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 112 total; [EntityBat['Bat'/525, l='MpServer', x=-304.54, y=44.02, z=-100.60], EntityBat['Bat'/528, l='MpServer', x=-317.67, y=39.12, z=-73.05], EntitySpider['Spider'/535, l='MpServer', x=-332.50, y=25.00, z=-79.50], EntityClientPlayerMP['ICAT09'/313, l='MpServer', x=-334.30, y=64.62, z=-20.30], EntityZombie['Zombie'/578, l='MpServer', x=-387.50, y=15.00, z=-100.50], EntitySkeleton['Skeleton'/581, l='MpServer', x=-287.78, y=32.00, z=36.28], EntityCreeper['Creeper'/73, l='MpServer', x=-409.25, y=69.00, z=36.47], EntityCreeper['Creeper'/590, l='MpServer', x=-308.50, y=12.00, z=39.50], EntityCreeper['Creeper'/591, l='MpServer', x=-306.50, y=12.00, z=37.50], EntityCreeper['Creeper'/592, l='MpServer', x=-307.50, y=12.00, z=35.50], EntityCreeper['Creeper'/81, l='MpServer', x=-404.97, y=63.00, z=-85.44], EntityCreeper['Creeper'/593, l='MpServer', x=-309.50, y=12.00, z=37.50], EntityPig['Pig'/83, l='MpServer', x=-410.03, y=64.00, z=-44.13], EntityPig['Pig'/84, l='MpServer', x=-401.81, y=64.00, z=-35.59], EntityZombie['Zombie'/597, l='MpServer', x=-298.50, y=37.00, z=18.50], EntitySkeleton['Skeleton'/86, l='MpServer', x=-400.50, y=66.00, z=28.50], EntityZombie['Zombie'/598, l='MpServer', x=-299.50, y=37.00, z=24.50], EntityCreeper['Creeper'/87, l='MpServer', x=-401.50, y=68.00, z=18.34], EntityPig['Pig'/88, l='MpServer', x=-394.09, y=67.00, z=56.13], EntityPig['Pig'/93, l='MpServer', x=-398.28, y=72.00, z=-1.91], EntityCreeper['Creeper'/94, l='MpServer', x=-389.41, y=66.00, z=27.00], EntityPig['Pig'/95, l='MpServer', x=-387.84, y=64.00, z=40.03], EntityPig['Pig'/96, l='MpServer', x=-390.34, y=64.00, z=54.53], EntitySkeleton['Skeleton'/610, l='MpServer', x=-295.50, y=49.00, z=-56.50], EntityCreeper['Creeper'/612, l='MpServer', x=-334.50, y=53.00, z=-78.50], EntitySkeleton['Skeleton'/613, l='MpServer', x=-336.75, y=27.00, z=-35.92], EntitySkeleton['Skeleton'/614, l='MpServer', x=-336.50, y=27.00, z=-38.50], EntitySkeleton['Skeleton'/615, l='MpServer', x=-336.50, y=27.00, z=-42.50], EntityPig['Pig'/104, l='MpServer', x=-374.34, y=64.00, z=-17.25], EntityPig['Pig'/105, l='MpServer', x=-371.09, y=64.00, z=-4.97], EntityPig['Pig'/108, l='MpServer', x=-361.06, y=64.00, z=47.81], EntityPig['Pig'/122, l='MpServer', x=-367.03, y=67.00, z=-34.34], EntityPig['Pig'/123, l='MpServer', x=-353.50, y=73.00, z=-7.50], EntityBat['Bat'/635, l='MpServer', x=-308.85, y=46.00, z=45.74], EntityZombie['Zombie'/124, l='MpServer', x=-366.88, y=64.00, z=29.34], EntityPig['Pig'/125, l='MpServer', x=-373.97, y=64.00, z=40.03], EntitySkeleton['Skeleton'/137, l='MpServer', x=-337.97, y=64.00, z=-44.50], EntityBat['Bat'/138, l='MpServer', x=-340.03, y=34.06, z=-19.94], EntityCreeper['Creeper'/139, l='MpServer', x=-342.50, y=49.00, z=-46.00], EntityBat['Bat'/140, l='MpServer', x=-336.75, y=39.10, z=-16.09], EntityBat['Bat'/141, l='MpServer', x=-339.31, y=40.10, z=-20.78], EntityCreeper['Creeper'/142, l='MpServer', x=-343.69, y=33.00, z=-29.97], EntitySkeleton['Skeleton'/143, l='MpServer', x=-343.50, y=33.00, z=-26.09], EntityCreeper['Creeper'/144, l='MpServer', x=-317.91, y=36.00, z=-30.31], EntityChicken['Chicken'/146, l='MpServer', x=-339.41, y=62.46, z=57.59], EntitySkeleton['Skeleton'/149, l='MpServer', x=-335.50, y=45.00, z=-44.50], EntityBat['Bat'/150, l='MpServer', x=-321.88, y=38.10, z=-30.75], EntityBat['Bat'/151, l='MpServer', x=-321.63, y=38.10, z=-30.72], EntityBat['Bat'/152, l='MpServer', x=-334.44, y=38.10, z=-22.34], EntitySpider['Spider'/153, l='MpServer', x=-340.03, y=27.81, z=-25.38], EntityCreeper['Creeper'/154, l='MpServer', x=-329.78, y=36.00, z=-27.66], EntityOtherPlayerMP['ICAT01'/410, l='MpServer', x=-336.00, y=62.00, z=-20.66], EntityCreeper['Creeper'/155, l='MpServer', x=-339.91, y=34.00, z=-18.75], EntityOtherPlayerMP['ICAT01'/410, l='MpServer', x=-336.00, y=62.00, z=-20.66], EntityBat['Bat'/156, l='MpServer', x=-334.25, y=42.10, z=1.28], EntitySpider['Spider'/413, l='MpServer', x=-391.19, y=69.00, z=11.47], EntityZombie['Zombie'/158, l='MpServer', x=-331.16, y=50.00, z=13.38], EntityCreeper['Creeper'/159, l='MpServer', x=-322.50, y=21.00, z=35.50], EntityCreeper['Creeper'/160, l='MpServer', x=-320.50, y=21.00, z=37.50], EntityBat['Bat'/161, l='MpServer', x=-325.25, y=22.40, z=36.11], EntitySlime['Slime'/162, l='MpServer', x=-332.38, y=39.05, z=33.38], EntityZombie['Zombie'/172, l='MpServer', x=-307.44, y=41.00, z=-87.50], EntityChicken['Chicken'/174, l='MpServer', x=-309.44, y=62.40, z=-69.56], EntitySkeleton['Skeleton'/686, l='MpServer', x=-331.50, y=36.00, z=21.50], EntityItem['item.item.egg'/175, l='MpServer', x=-309.81, y=56.13, z=-72.06], EntityChicken['Chicken'/177, l='MpServer', x=-311.47, y=63.00, z=-56.75], EntityCreeper['Creeper'/178, l='MpServer', x=-315.50, y=64.00, z=-54.50], EntityZombie['Zombie'/180, l='MpServer', x=-315.00, y=50.00, z=-22.44], EntitySlime['Slime'/181, l='MpServer', x=-310.69, y=23.00, z=-3.69], EntitySkeleton['Skeleton'/182, l='MpServer', x=-311.88, y=37.00, z=14.53], EntityBat['Bat'/183, l='MpServer', x=-319.16, y=50.10, z=2.53], EntitySlime['Slime'/184, l='MpServer', x=-318.31, y=13.99, z=23.69], EntitySquid['Squid'/696, l='MpServer', x=-300.50, y=59.00, z=-61.50], EntitySlime['Slime'/185, l='MpServer', x=-313.31, y=13.00, z=20.33], EntitySquid['Squid'/697, l='MpServer', x=-296.50, y=59.00, z=-57.50], EntitySlime['Slime'/186, l='MpServer', x=-313.69, y=13.00, z=21.63], EntitySquid['Squid'/698, l='MpServer', x=-307.50, y=59.00, z=-63.50], EntitySquid['Squid'/699, l='MpServer', x=-303.50, y=59.00, z=-61.50], EntitySquid['Squid'/700, l='MpServer', x=-279.60, y=59.00, z=5.45], EntitySquid['Squid'/701, l='MpServer', x=-278.50, y=59.00, z=5.50], EntitySquid['Squid'/702, l='MpServer', x=-280.50, y=59.00, z=6.50], EntitySquid['Squid'/703, l='MpServer', x=-279.50, y=59.00, z=11.50], EntityChicken['Chicken'/193, l='MpServer', x=-301.63, y=73.00, z=-99.53], EntityChicken['Chicken'/194, l='MpServer', x=-295.50, y=69.00, z=-83.50], EntityChicken['Chicken'/195, l='MpServer', x=-295.50, y=70.00, z=-85.50], EntityItem['item.item.egg'/196, l='MpServer', x=-291.13, y=73.13, z=-84.72], EntityItem['item.item.egg'/197, l='MpServer', x=-296.06, y=71.13, z=-82.31], EntitySkeleton['Skeleton'/198, l='MpServer', x=-296.50, y=48.00, z=-61.50], EntitySquid['Squid'/200, l='MpServer', x=-289.28, y=56.00, z=-28.06], EntityChicken['Chicken'/201, l='MpServer', x=-293.47, y=62.12, z=-21.53], EntityChicken['Chicken'/202, l='MpServer', x=-289.47, y=62.46, z=-11.47], EntityItem['item.item.egg'/203, l='MpServer', x=-294.91, y=56.13, z=-14.47], EntitySkeleton['Skeleton'/459, l='MpServer', x=-331.50, y=33.00, z=23.50], EntitySquid['Squid'/204, l='MpServer', x=-299.97, y=59.16, z=-11.50], EntityZombie['Zombie'/460, l='MpServer', x=-331.50, y=33.00, z=26.50], EntitySquid['Squid'/205, l='MpServer', x=-283.47, y=59.34, z=-10.16], EntityChicken['Chicken'/206, l='MpServer', x=-291.50, y=68.00, z=-3.50], EntityZombie['Zombie'/462, l='MpServer', x=-331.50, y=33.00, z=25.50], EntityZombie['Zombie'/207, l='MpServer', x=-292.63, y=14.00, z=-2.56], EntityChicken['Chicken'/220, l='MpServer', x=-276.84, y=62.27, z=-25.53], EntityZombie['Zombie'/476, l='MpServer', x=-379.50, y=63.00, z=-75.91], EntityItem['item.item.egg'/221, l='MpServer', x=-276.38, y=60.13, z=-25.56], EntitySpider['Spider'/481, l='MpServer', x=-380.06, y=63.00, z=-74.09], EntityCow['Cow'/231, l='MpServer', x=-269.72, y=63.00, z=11.31], EntityChicken['Chicken'/232, l='MpServer', x=-261.50, y=63.00, z=25.50], EntityCow['Cow'/233, l='MpServer', x=-262.53, y=63.00, z=24.50], EntitySpider['Spider'/494, l='MpServer', x=-287.50, y=15.00, z=26.50], EntitySpider['Spider'/496, l='MpServer', x=-290.38, y=15.00, z=28.91], EntitySkeleton['Skeleton'/497, l='MpServer', x=-292.13, y=15.00, z=32.25], EntitySkeleton['Skeleton'/498, l='MpServer', x=-285.33, y=12.51, z=28.43], EntityChicken['Chicken'/245, l='MpServer', x=-255.47, y=63.00, z=-95.69], EntitySkeleton['Skeleton'/507, l='MpServer', x=-346.50, y=40.00, z=-30.50]]
+	Retry entities: 0 total; []
+Stacktrace:
+	at net.minecraft.src.WorldClient.addWorldInfoToCrashReport(WorldClient.java:405)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2369)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:673)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_71, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 785353272 bytes (748 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 1432 (80192 bytes; 0 MB) allocated, 3 (168 bytes; 0 MB) used
+	Suspicious classes: Start[net.minecraft.src.IPlayerUsage, ILogAgent, MinecraftFakeLauncher, ...]
+	IntCache: cache: 0, tcache: 0, allocated: 1, tallocated: 63
+	ModLoader: Mods loaded: 2
+ModLoader 1.5.2
+mod_OperaCraft 2.0.0
+
+	LWJGL: 2.4.2
+	OpenGL: ATI Radeon HD 4850 GL version 3.3.10428 Compatibility Profile Context, ATI Technologies Inc.
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Texture Pack: Default
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 695 (38920 bytes; 0 MB) allocated, 17 (952 bytes; 0 MB) used

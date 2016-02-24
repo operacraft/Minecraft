@@ -1,0 +1,69 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 9/24/15 8:08 PM
+Description: Exception ticking world
+
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextNode(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at net.minecraft.src.ChunkProviderServer.unloadQueuedChunks(ChunkProviderServer.java:292)
+	at net.minecraft.src.WorldServer.tick(WorldServer.java:122)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:626)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at java.util.HashMap$HashIterator.nextNode(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at net.minecraft.src.ChunkProviderServer.unloadQueuedChunks(ChunkProviderServer.java:292)
+	at net.minecraft.src.WorldServer.tick(WorldServer.java:122)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 986 Drop: 441
+	Level seed: -563873179895845317
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-44,64,120), Chunk: (at 4,4,8 in -3,7; contains blocks -48,0,112 to -33,255,127), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 11537 game time, 11537 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 13866 (now: false), thunder time: 108304 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:626)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_60, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 875331536 bytes (834 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 4453 (249368 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Suspicious classes: Start[net.minecraft.src.IPlayerUsage, ILogAgent, MinecraftFakeLauncher, ...]
+	IntCache: cache: 0, tcache: 0, allocated: 1, tallocated: 63
+	ModLoader: Mods loaded: 2
+ModLoader 1.5.2
+mod_OperaCraft 1.2
+
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 1170 (65520 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 0 / 100; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Very likely; Jar signature invalidated

@@ -1,0 +1,26 @@
+INDEX VERSION 1.127+C:\Users\OPERAcraft\Downloads\OPERAcraft New\eclipse\.metadata\.plugins\org.eclipse.jdt.core
+1126381264.index
+2053797313.index
+2235551016.index
+742974785.index
+462786078.index
+3524662672.index
+1954120464.index
+1681516525.index
+2126007788.index
+2085746493.index
+2501520862.index
+737875853.index
+286217041.index
+2671045963.index
+565102271.index
+3306367843.index
+2549917922.index
+4089353016.index
+137624701.index
+1182967862.index
+2851524012.index
+2528020881.index
+3444757604.index
+152699204.index
+1075865446.index

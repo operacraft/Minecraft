@@ -1,0 +1,12 @@
+Feb 24, 2016 8:53:04 AM net.minecraft.src.ModLoader init
+FINE: ModLoader 1.5.2 Initializing...
+Feb 24, 2016 8:53:04 AM net.minecraft.src.ModLoader readFromClassPath
+FINER: Adding mods from C:\Users\OPERAcraft\Downloads\OPERAcraft New\eclipse\Client\bin
+Feb 24, 2016 8:53:04 AM net.minecraft.src.ModLoader readFromClassPath
+FINER: Directory found.
+Feb 24, 2016 8:53:04 AM net.minecraft.src.ModLoader addMod
+FINE: Mod Initialized: "mod_OperaCraft 2.0.0" from mod_OperaCraft.class
+Feb 24, 2016 8:53:04 AM net.minecraft.src.ModLoader init
+FINE: Mod Loaded: "mod_OperaCraft 2.0.0"
+Feb 24, 2016 8:53:04 AM net.minecraft.src.ModLoader addAllRenderers
+FINE: Initialized

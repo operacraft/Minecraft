@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Java\jre1.8.0_60\bin\java.exe" -Xms512m -Xmx1024m -cp "%APPDATA%\.minecraft\bin\*"; -Djava.library.path="%APPDATA%\.minecraft\bin\natives" net.minecraft.client.Minecraft "ICAT01"

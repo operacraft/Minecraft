@@ -1,0 +1,86 @@
+OPERAcraft TODO
+===============
+
+Check camera view switching OK
+Check fade OK
+Can the textures be downloaded locally? OK
+Check camera visibility OK
+  projector and regular camera don't see each other OK
+Regular camera appearance OK
+Check regular camera visibility against players OK
+Disable camera green/red helmet IGNORED (LIKELY BROKEN)
+textures for players online should not be loading from the internet OK
+  later consider implications when someone joins who does not have skins file...
+Spectators should not be able to click on anything OK
+Spectators should not be able to get inventory OK
+Spectators should not be able to pick up things OK
+Spectators should not be able to chat OK
+projector and cameras should not pick up items OK
+cameras should have no shadows OK
+Teleporting (storing and retrieving values) OK
+added separate cloaks folder and texture support OK
+cameras and projector cannot interact with environment (attack/pickup/etc.) OK
+Check if it all works on Linux OK
+Projector should only show @text and port config and nothing else OK
+Actors should be the only ones to be able to pick up things OK
+Disabled ability to edit keybindings for custom OPERAcraft mod keys OK
+Spectators should be able to teleport using the current first available projector location OK
+Remove [Rcon: Teleported <> to <>] on projector's chat OK
+When a player is teleported, need to check if we are a camera or a projector and issue the same teleport command to those who are following (camera to projector and projector to spectators) -- fixed by properly referencing player through server, rather than by its visibility (via ModelBiped) OK
+Spectator names (above heads) should be invisible to everyone while spectators can toggle visibility of other spectators by using a hide GUI key OK
+Spectators should see cameras with their skins OK
+Spectators should not see cameras or projector when in Cam View mode OK
+Experience should not show on projector view with HUD disabled OK
+Connections and disconnections should not show on any of the screens (works whenever host disables it with the hud off since it is the one broadcasting those messages) OK
+Other messages should be disabled on cameras and actors as well OK
+/kill command should be disabled on projector? Not necessary? OK
+Ability to catch-up with the current state before this will work OK
+Spectator camera when latched onto the projector reflects xfades OK
+Better UI for Spectators reflecting their state OK
+Subtitles should be visible on the Spectator screen OK
+*Subtitles on the projector should be limited to only one post at a time OK
+*Spectators do not erase text on empty message OK
+*No labels above actors for spectators OK
+*Spectators should not see each other when the GUI is hidden or they are latched onto the main camera OK
+*tpset should work for other player as well (from server/projector) OK
+*When a player leaves and then rejoins they cannot do that in the same session OK
+*Mouth animation request for players who are not nearby kills the network stream from pd-l2ork OK
+*Upon disconnecting, client list should be reset OK
+*tpall is not always working OK
+*Clients cannot connect unless they are close to the projector OK
+
+==========================================================
+
+*Mouth animations do not work on clients, only on owners and projector
+*tpset is not always working ???
+
+==========================================================
+
+Textures for players online do not load from the internet
+  *does integrated server have ability to serve skins?
+  *later consider implications when someone joins who does not have skins file...
+  *then maybe they should have skins associated with those usernames
+   (rather provide skins for a particular production)
+
+CHANGES:
+ChangeGameTypeThread.java 22-30
+
+This works no matter where the player is but only on the server
+Minecraft.getMinecraft().theWorld.getPlayerEntityByName(String name);
+
+EntityPlayerMP camera =
+Minecraft.getMinecraft().getIntegratedServer().getConfigurationManager().getPlayerForUsername(Vars.getCameraByValue(Vars.cameraViewPortValue));
+
+EntityPlayerMP projector = Minecraft.getMinecraft().getIntegratedServer().getConfigurationManager().getPlayerForUsername(Vars.projectorName);
+
+
+EntityPlayer boo = Minecraft.getMinecraft().theWorld.getPlayerEntityByName(par7Entity.getEntityName());
+
+
+
+
+            this.sendQueue.addToSendQueue(new Packet11PlayerPosition(this.posX, this.boundingBox.minY, this.posY, this.posZ, this.onGround));
+        }
+        else if (var14)
+        {
+            this.sendQueue.addToSendQueue(new Packet12PlayerLook(this.rotationYaw, this.rotationPitch, this.onGround));

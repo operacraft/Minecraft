@@ -1,0 +1,54 @@
+---- Minecraft Crash Report ----
+// Oh - I know what I did wrong!
+
+Time: 12/3/15 11:17 AM
+Description: Exception in server tick loop
+
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Unknown Source)
+	at java.util.Arrays.copyOf(Unknown Source)
+	at java.util.ArrayList.grow(Unknown Source)
+	at java.util.ArrayList.ensureExplicitCapacity(Unknown Source)
+	at java.util.ArrayList.ensureCapacityInternal(Unknown Source)
+	at java.util.ArrayList.add(Unknown Source)
+	at net.minecraft.src.AABBPool.getAABB(AABBPool.java:49)
+	at net.minecraft.src.Block.getCollisionBoundingBoxFromPool(Block.java:527)
+	at net.minecraft.src.Block.addCollisionBoxesToList(Block.java:513)
+	at net.minecraft.src.World.getCollidingBoundingBoxes(World.java:1564)
+	at net.minecraft.src.Entity.moveEntity(Entity.java:695)
+	at net.minecraft.src.NetServerHandler.handleFlying(NetServerHandler.java:275)
+	at net.minecraft.src.Packet10Flying.processPacket(Packet10Flying.java:48)
+	at net.minecraft.src.MemoryConnection.processReadPackets(MemoryConnection.java:74)
+	at net.minecraft.src.NetServerHandler.networkTick(NetServerHandler.java:70)
+	at net.minecraft.src.NetworkListenThread.networkTick(NetworkListenThread.java:48)
+	at net.minecraft.src.IntegratedServerListenThread.networkTick(IntegratedServerListenThread.java:99)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:657)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_66, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 35734160 bytes (34 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 13845150 (775328400 bytes; 739 MB) allocated, 13845150 (775328400 bytes; 739 MB) used
+	Suspicious classes: Start[net.minecraft.src.IPlayerUsage, ILogAgent, MinecraftFakeLauncher, ...]
+	IntCache: cache: 2, tcache: 0, allocated: 1, tallocated: 63
+	ModLoader: Mods loaded: 2
+ModLoader 1.5.2
+mod_OperaCraft 1.7.7
+
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 12878 (721168 bytes; 0 MB) allocated, 4706 (263536 bytes; 0 MB) used
+	Player Count: 3 / 100; [EntityPlayerMP['ICAT09'/30, l='New World', x=1000.50, y=100.50, z=200.50], EntityPlayerMP['ICAT07'/575, l='New World', x=1000.50, y=100.50, z=200.50], EntityPlayerMP['ICAT08'/1432, l='New World', x=-99.50, y=-499.50, z=-199.50]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Very likely; Jar signature invalidated

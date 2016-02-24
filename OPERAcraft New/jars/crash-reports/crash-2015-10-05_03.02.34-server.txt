@@ -1,0 +1,46 @@
+---- Minecraft Crash Report ----
+// This is a token for 1 free hug. Redeem at your nearest Mojangsta: [~~HUG~~]
+
+Time: 10/5/15 3:02 AM
+Description: Ticking memory connection
+
+java.lang.IllegalStateException: Failed to add player. EntityPlayerMP['ICAT25'/183, l='New World', x=78.22, y=75.38, z=89.13] already is in chunk -6, -5
+	at net.minecraft.src.PlayerInstance.addPlayerToChunkWatchingList(PlayerInstance.java:35)
+	at net.minecraft.src.PlayerManager.updateMountedMovingPlayer(PlayerManager.java:243)
+	at net.minecraft.src.ServerConfigurationManager.serverUpdateMountedMovingPlayer(ServerConfigurationManager.java:238)
+	at net.minecraft.src.NetServerHandler.handleFlying(NetServerHandler.java:327)
+	at net.minecraft.src.Packet10Flying.processPacket(Packet10Flying.java:48)
+	at net.minecraft.src.MemoryConnection.processReadPackets(MemoryConnection.java:74)
+	at net.minecraft.src.NetServerHandler.networkTick(NetServerHandler.java:70)
+	at net.minecraft.src.NetworkListenThread.networkTick(NetworkListenThread.java:48)
+	at net.minecraft.src.IntegratedServerListenThread.networkTick(IntegratedServerListenThread.java:99)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:657)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_60, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 654577224 bytes (624 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 3972 (222432 bytes; 0 MB) allocated, 3293 (184408 bytes; 0 MB) used
+	Suspicious classes: Start[net.minecraft.src.IPlayerUsage, ILogAgent, MinecraftFakeLauncher, ...]
+	IntCache: cache: 1, tcache: 0, allocated: 1, tallocated: 63
+	ModLoader: Mods loaded: 2
+ModLoader 1.5.2
+mod_OperaCraft 1.4.2
+
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 8678 (485968 bytes; 0 MB) allocated, 4519 (253064 bytes; 0 MB) used
+	Player Count: 2 / 100; [EntityPlayerMP['ICAT25'/183, l='New World', x=94.96, y=113.46, z=58.42], EntityPlayerMP['ICAT20'/538, l='New World', x=78.20, y=75.40, z=89.15]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Very likely; Jar signature invalidated

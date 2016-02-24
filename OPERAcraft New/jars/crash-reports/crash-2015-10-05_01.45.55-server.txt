@@ -1,0 +1,95 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 10/5/15 1:45 AM
+Description: Ticking entity
+
+java.lang.NullPointerException
+	at net.minecraft.src.Entity.moveEntity(Entity.java:730)
+	at net.minecraft.src.EntityLiving.moveEntityWithHeading(EntityLiving.java:1544)
+	at net.minecraft.src.EntityLiving.onLivingUpdate(EntityLiving.java:1840)
+	at net.minecraft.src.EntityAgeable.onLivingUpdate(EntityAgeable.java:107)
+	at net.minecraft.src.EntityAnimal.onLivingUpdate(EntityAnimal.java:39)
+	at net.minecraft.src.EntitySheep.onLivingUpdate(EntitySheep.java:68)
+	at net.minecraft.src.EntityLiving.onUpdate(EntityLiving.java:859)
+	at net.minecraft.src.World.updateEntityWithOptionalForce(World.java:2142)
+	at net.minecraft.src.WorldServer.updateEntityWithOptionalForce(WorldServer.java:633)
+	at net.minecraft.src.World.updateEntity(World.java:2112)
+	at net.minecraft.src.World.updateEntities(World.java:1981)
+	at net.minecraft.src.WorldServer.updateEntities(WorldServer.java:465)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:637)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.src.Entity.moveEntity(Entity.java:730)
+	at net.minecraft.src.EntityLiving.moveEntityWithHeading(EntityLiving.java:1544)
+	at net.minecraft.src.EntityLiving.onLivingUpdate(EntityLiving.java:1840)
+	at net.minecraft.src.EntityAgeable.onLivingUpdate(EntityAgeable.java:107)
+	at net.minecraft.src.EntityAnimal.onLivingUpdate(EntityAnimal.java:39)
+	at net.minecraft.src.EntitySheep.onLivingUpdate(EntitySheep.java:68)
+	at net.minecraft.src.EntityLiving.onUpdate(EntityLiving.java:859)
+	at net.minecraft.src.World.updateEntityWithOptionalForce(World.java:2142)
+	at net.minecraft.src.WorldServer.updateEntityWithOptionalForce(WorldServer.java:633)
+	at net.minecraft.src.World.updateEntity(World.java:2112)
+
+-- Entity being ticked --
+Details:
+	Entity Type: Sheep (net.minecraft.src.EntitySheep)
+	Entity ID: 98
+	Entity Name: Sheep
+	Entity's Exact location: -35.12, 64.00, 340.14
+	Entity's Block location: World: (-36,64,340), Chunk: (at 12,4,4 in -3,21; contains blocks -48,0,336 to -33,255,351), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+Stacktrace:
+	at net.minecraft.src.World.updateEntities(World.java:1981)
+	at net.minecraft.src.WorldServer.updateEntities(WorldServer.java:465)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 2 total; [EntityPlayerMP['ICAT25'/245, l='New World', x=52.26, y=67.12, z=135.53], EntityPlayerMP['ICAT75'/950, l='New World', x=52.26, y=67.12, z=135.53]]
+	Chunk stats: ServerChunkCache: 826 Drop: 0
+	Level seed: 9021480372269035346
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-52,64,256), Chunk: (at 12,4,0 in -4,16; contains blocks -64,0,256 to -49,255,271), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 24616 game time, 10577 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 122251 (now: false), thunder time: 2384 (now: true)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:637)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_60, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 842821480 bytes (803 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 3517 (196952 bytes; 0 MB) allocated, 894 (50064 bytes; 0 MB) used
+	Suspicious classes: Start[net.minecraft.src.IPlayerUsage, ILogAgent, MinecraftFakeLauncher, ...]
+	IntCache: cache: 0, tcache: 0, allocated: 3, tallocated: 63
+	ModLoader: Mods loaded: 2
+ModLoader 1.5.2
+mod_OperaCraft 1.4.2
+
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 3590 (201040 bytes; 0 MB) allocated, 122 (6832 bytes; 0 MB) used
+	Player Count: 2 / 100; [EntityPlayerMP['ICAT25'/245, l='New World', x=52.26, y=67.12, z=135.53], EntityPlayerMP['ICAT75'/950, l='New World', x=52.26, y=67.12, z=135.53]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Very likely; Jar signature invalidated

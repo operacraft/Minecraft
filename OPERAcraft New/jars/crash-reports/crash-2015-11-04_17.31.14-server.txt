@@ -1,0 +1,47 @@
+---- Minecraft Crash Report ----
+// Don't do that.
+
+Time: 11/4/15 5:31 PM
+Description: Ticking memory connection
+
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.ArrayList.fastRemove(Unknown Source)
+	at java.util.ArrayList.remove(Unknown Source)
+	at net.minecraft.src.PlayerInstance.sendThisChunkToPlayer(PlayerInstance.java:49)
+	at net.minecraft.src.PlayerManager.removePlayer(PlayerManager.java:201)
+	at net.minecraft.src.ServerConfigurationManager.playerLoggedOut(ServerConfigurationManager.java:257)
+	at net.minecraft.src.NetServerHandler.handleErrorMessage(NetServerHandler.java:535)
+	at net.minecraft.src.MemoryConnection.processReadPackets(MemoryConnection.java:84)
+	at net.minecraft.src.NetServerHandler.networkTick(NetServerHandler.java:70)
+	at net.minecraft.src.NetworkListenThread.networkTick(NetworkListenThread.java:48)
+	at net.minecraft.src.IntegratedServerListenThread.networkTick(IntegratedServerListenThread.java:99)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:657)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_65, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 921494472 bytes (878 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 2785 (155960 bytes; 0 MB) allocated, 2578 (144368 bytes; 0 MB) used
+	Suspicious classes: Start[net.minecraft.src.IPlayerUsage, ILogAgent, MinecraftFakeLauncher, ...]
+	IntCache: cache: 0, tcache: 12, allocated: 1, tallocated: 63
+	ModLoader: Mods loaded: 2
+ModLoader 1.5.2
+mod_OperaCraft 1.5.0
+
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 840 (47040 bytes; 0 MB) allocated, 681 (38136 bytes; 0 MB) used
+	Player Count: 0 / 100; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Very likely; Jar signature invalidated

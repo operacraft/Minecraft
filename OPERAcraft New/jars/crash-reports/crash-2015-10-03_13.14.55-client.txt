@@ -1,0 +1,60 @@
+---- Minecraft Crash Report ----
+// This doesn't make any sense!
+
+Time: 10/3/15 1:14 PM
+Description: Rendering screen
+
+java.lang.IndexOutOfBoundsException: Index: 21, Size: 21
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at net.minecraft.src.GuiControls.drawScreen(GuiControls.java:146)
+	at net.minecraft.src.EntityRenderer.updateCameraAndRender(EntityRenderer.java:989)
+	at net.minecraft.src.EntityRendererProxy.updateCameraAndRender(EntityRendererProxy.java:20)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:767)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:657)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at net.minecraft.src.GuiControls.drawScreen(GuiControls.java:146)
+
+-- Screen render details --
+Details:
+	Screen name: net.minecraft.src.GuiControls
+	Mouse location: Scaled: (256, 138). Absolute: (513, 202)
+	Screen size: Scaled: (427, 240). Absolute: (854, 480). Scale factor of 2
+Stacktrace:
+	at net.minecraft.src.EntityRenderer.updateCameraAndRender(EntityRenderer.java:989)
+	at net.minecraft.src.EntityRendererProxy.updateCameraAndRender(EntityRendererProxy.java:20)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:767)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:657)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_60, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 833124024 bytes (794 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Suspicious classes: Start[net.minecraft.src.IPlayerUsage, ILogAgent, MinecraftFakeLauncher, ...]
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	ModLoader: Mods loaded: 2
+ModLoader 1.5.2
+mod_OperaCraft 1.4
+
+	LWJGL: 2.4.2
+	OpenGL: GeForce GT 750M/PCIe/SSE2 GL version 4.4.0, NVIDIA Corporation
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Texture Pack: Default
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: ~~ERROR~~ NullPointerException: null

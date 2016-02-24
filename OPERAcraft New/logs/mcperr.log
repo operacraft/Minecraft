@@ -1,0 +1,56 @@
+02:33:40 - !! Modified jar detected. Unpredictable results !!
+02:35:37 - 'runtime\bin\applydiff.exe -p1 -u -i ..\..\temp\temp.patch -d src\minecraft' failed : 1
+02:35:37 - 
+02:35:37 - == ERRORS FOUND ==
+02:35:37 - 
+02:35:37 - 1 out of 1 hunk ignored -- saving rejects to file 'net\minecraft\src\IntegratedSer#'
+02:35:37 - 2 out of 2 hunks FAILED -- saving rejects to file 'net\minecraft\src\RenderBlocks.#'
+02:35:37 - ==================
+02:35:37 - 
+04:26:01 - FATAL ERROR
+Traceback (most recent call last):
+  File "runtime\reobfuscate.py", line 56, in reobfuscate
+    reobfuscate_side(commands, CLIENT, reobf_all=reobf_all, srg_names=srg_names)
+  File "C:\Users\Ico\Desktop\OPERAcraft New\runtime\mcp.py", line 152, in reobfuscate_side
+    commands.cleanreobfdir(side)
+  File "C:\Users\Ico\Desktop\OPERAcraft New\runtime\commands.py", line 886, in cleanreobfdir
+    os.makedirs(outpathlk[side])
+  File "os.pyc", line 157, in makedirs
+WindowsError: [Error 5] Access is denied: 'reobf\\minecraft'
+18:24:15 - '"C:\Program Files (x86)\Java\jdk1.6.0_45\bin\javac" -Xlint:-options -deprecation -g -source 1.6 -tar...' failed : 1
+18:24:15 - 
+18:24:15 - == ERRORS FOUND ==
+18:24:15 - 
+18:24:15 - src\minecraft\net\minecraft\src\TexturePackDefault.java:40: unreachable statement
+18:24:15 -             Vars.debug += "texture not found: " + par1Str + "\n";
+18:24:15 -             ^
+18:24:15 - 
+18:24:15 - src\minecraft\net\minecraft\src\TexturePackDefault.java:46: missing return statement
+18:24:15 -     }
+18:24:15 -     ^
+18:24:15 - 
+18:24:15 - 2 errors
+18:24:15 - ==================
+18:24:15 - 
+17:47:24 - * File aux.class failed extracting for net/minecraft/src/CanvasMojangLogo
+17:50:47 - * File aux.class failed extracting for net/minecraft/src/CanvasMojangLogo
+19:57:47 - '"C:\Program Files\Java\jdk1.7.0_80\bin\javac" -Xlint:-options -deprecation -g -source 1.6 -target 1....' failed : 1
+19:57:47 - 
+19:57:47 - == ERRORS FOUND ==
+19:57:47 - 
+19:57:47 - src\minecraft\net\minecraft\src\CommandTpOne.java:135: error: illegal start of expression
+19:57:47 - 							}*/
+19:57:47 - 							 ^
+19:57:47 - 
+19:57:47 - src\minecraft\net\minecraft\src\CommandTpOne.java:135: error: illegal start of expression
+19:57:47 - 							}*/
+19:57:47 - 							  ^
+19:57:47 - 
+19:57:47 - src\minecraft\net\minecraft\src\CommandTpOne.java:136: error: illegal start of expression
+19:57:47 - 							break;
+19:57:47 - 							^
+19:57:47 - 
+19:57:47 - 3 errors
+19:57:47 - ==================
+19:57:47 - 
+19:57:54 - !! Can not find client bins, try recompiling !!

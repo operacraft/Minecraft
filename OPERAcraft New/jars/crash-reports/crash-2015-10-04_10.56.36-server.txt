@@ -1,0 +1,91 @@
+---- Minecraft Crash Report ----
+// On the bright side, I bought you a teddy bear!
+
+Time: 10/4/15 10:56 AM
+Description: Ticking entity
+
+java.lang.NullPointerException
+	at net.minecraft.src.Entity.moveEntity(Entity.java:813)
+	at net.minecraft.src.EntityLiving.moveEntityWithHeading(EntityLiving.java:1423)
+	at net.minecraft.src.EntityLiving.onLivingUpdate(EntityLiving.java:1834)
+	at net.minecraft.src.EntityLiving.onUpdate(EntityLiving.java:853)
+	at net.minecraft.src.EntitySlime.onUpdate(EntitySlime.java:100)
+	at net.minecraft.src.World.updateEntityWithOptionalForce(World.java:2142)
+	at net.minecraft.src.WorldServer.updateEntityWithOptionalForce(WorldServer.java:633)
+	at net.minecraft.src.World.updateEntity(World.java:2112)
+	at net.minecraft.src.World.updateEntities(World.java:1981)
+	at net.minecraft.src.WorldServer.updateEntities(WorldServer.java:465)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:637)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.src.Entity.moveEntity(Entity.java:813)
+	at net.minecraft.src.EntityLiving.moveEntityWithHeading(EntityLiving.java:1423)
+	at net.minecraft.src.EntityLiving.onLivingUpdate(EntityLiving.java:1834)
+	at net.minecraft.src.EntityLiving.onUpdate(EntityLiving.java:853)
+	at net.minecraft.src.EntitySlime.onUpdate(EntitySlime.java:100)
+	at net.minecraft.src.World.updateEntityWithOptionalForce(World.java:2142)
+	at net.minecraft.src.WorldServer.updateEntityWithOptionalForce(WorldServer.java:633)
+	at net.minecraft.src.World.updateEntity(World.java:2112)
+
+-- Entity being ticked --
+Details:
+	Entity Type: Slime (net.minecraft.src.EntitySlime)
+	Entity ID: 139
+	Entity Name: Slime
+	Entity's Exact location: 271.80, 22.00, 137.20
+	Entity's Block location: World: (271,22,137), Chunk: (at 15,1,9 in 16,8; contains blocks 256,0,128 to 271,255,143), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Entity's Momentum: 0.01, -0.02, -0.01
+Stacktrace:
+	at net.minecraft.src.World.updateEntities(World.java:1981)
+	at net.minecraft.src.WorldServer.updateEntities(WorldServer.java:465)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 2 total; [EntityPlayerMP['ICAT25'/61, l='New World', x=254.56, y=69.00, z=164.71], EntityPlayerMP['ICAT85'/262, l='New World', x=254.56, y=69.00, z=164.71]]
+	Chunk stats: ServerChunkCache: 967 Drop: 0
+	Level seed: -4121744213262405940
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-18,64,122), Chunk: (at 14,4,10 in -2,7; contains blocks -32,0,112 to -17,255,127), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 11078 game time, 11078 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 41293 (now: false), thunder time: 28407 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:637)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:560)
+	at net.minecraft.src.IntegratedServer.tick(IntegratedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:470)
+	at net.minecraft.src.ThreadMinecraftServer.run(ThreadMinecraftServer.java:18)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.5.2
+	Operating System: Windows 8.1 (x86) version 6.3
+	Java Version: 1.8.0_60, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 677513024 bytes (646 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 2511 (140616 bytes; 0 MB) allocated, 1667 (93352 bytes; 0 MB) used
+	Suspicious classes: Start[net.minecraft.src.IPlayerUsage, ILogAgent, MinecraftFakeLauncher, ...]
+	IntCache: cache: 0, tcache: 0, allocated: 1, tallocated: 63
+	ModLoader: Mods loaded: 2
+ModLoader 1.5.2
+mod_OperaCraft 1.4.2
+
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 475 (26600 bytes; 0 MB) allocated, 289 (16184 bytes; 0 MB) used
+	Player Count: 2 / 100; [EntityPlayerMP['ICAT25'/61, l='New World', x=254.56, y=69.00, z=164.71], EntityPlayerMP['ICAT85'/262, l='New World', x=254.56, y=69.00, z=164.71]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Very likely; Jar signature invalidated

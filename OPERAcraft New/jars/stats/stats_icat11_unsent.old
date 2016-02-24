@@ -1,0 +1,12 @@
+{
+  "user":{
+    "name":"ICAT11",
+    "sessionid":"local"
+  },
+  "stats-change":[
+    {"1100":583},
+    {"1004":1},
+    {"1003":1}
+  ],
+  "checksum":"79307ba8244d8c34d748f68ebc607902"
+}
